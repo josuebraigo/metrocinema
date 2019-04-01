@@ -1,0 +1,10 @@
+doctype
+html
+	head
+		include include/head
+	body#actores
+		include include/header
+		@foreach($directors as $director)
+		p {{ $director->first_name }} {{ $director->last_name }}
+		@endforeach
+		include include/footer

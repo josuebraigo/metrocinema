@@ -1,0 +1,23 @@
+doctype
+html
+	head
+		include include/head
+	body
+		include include/header
+
+		@if($movie == NULL)
+		p No existe la pelicula! :(
+		@else
+		p Nombre: {{ $movie->name }}
+		p Duración: {{ $movie->duration }}
+		p Año: {{ $movie->year }}
+		p País: {{ $movie->country }}
+		p Sinopsis: {{ $movie->sinopsys }}
+		p Trailer: {{ $movie->trailer }}
+		p Poster: {{ $movie->poster }}
+		p Actores: {{ $movie->actor_id }}
+		p Director: {{ $movie->director_id }}
+		a(href!="/movies/{{ $movie->id }}/edit") Editar
+		a(href!="#") Eliminar
+		@endif
+		include include/header

@@ -1,0 +1,43 @@
+doctype
+html
+	head
+		include include/head
+	body
+		include include/header
+		form(method="POST" action!="/movies/{{$movie->id}}")
+			label(for="name") Nombre
+			input#name(type="text" name="name" value!="{{ $movie->name }}")
+			label(for="duration") Duración
+			input#duration(type="text" name="duration" value!="{{ $movie->duration }}")
+			label(for="year") Año
+			input#year(type="text" name="year" value!="{{ $movie->year }}")
+			label(for="country") País
+			input#country(type="text" name="country" value!="{{ $movie->country }}")
+			label(for="sinopsys") Sinopsis
+			textarea#sinopsys(type="text" name="sinopsys" value!="{{ $movie->sinopsys }}")
+			label(for="trailer") Trailer
+			input#trailer(type="text" name="trailer" placeholder="URL de la película" value!="{{ $movie->trailer }}")
+			label(for="poster") Poster
+			input#poster(type="text" name="poster" placeholder="URL del poster" value!="{{ $movie->poster }}")
+			label(for="actor") Actor
+			select(name="actor_id")#actor
+				@foreach($actors as $actor)
+				@if($movie->actor_id == $actor->id)
+				option(value!="{{ $actor->id }}" selected) {{ $actor->first_name }} {{ $actor->last_name }}
+				@else
+				option(value!="{{ $actor->id }}" selected) {{ $actor->first_name }} {{ $actor->last_name }}
+				@endif
+				@endforeach
+			label(for="director") Director
+			select(name="director_id")#director
+				@foreach($directors as $director)
+				@if($movie->director_id == $director->id)
+				option(value!="{{ $director->id }}" selected) {{ $director->first_name }} {{ $director->last_name }}
+				@else
+				option(value!="{{ $director->id }}") {{ $director->first_name }} {{ $director->last_name }}
+				@endif
+				@endforeach
+			input(type="hidden" name="_method" value="PUT")
+			@csrf
+			input(type="submit" value="Guardar")
+		include include/footer

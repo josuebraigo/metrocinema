@@ -1,0 +1,20 @@
+doctype
+html
+	head 
+		include include/head
+	body#home
+		include include/header
+		.container
+			@foreach($movies as $movie)
+			p Nombre: {{ $movie->name }}
+			p Duración: {{ $movie->duration }}
+			p Año: {{ $movie->year }}
+			p País: {{ $movie->country }}
+			p Sinopsis: {{ $movie->sinopsys }}
+			p Trailer: {{ $movie->trailer }}
+			p Poster: {{ $movie->poster }}
+			p Actores: {{ $movie->actor_id }}
+			p Director: {{ $movie->director_id }}	
+
+			@endforeach
+		include include/footer

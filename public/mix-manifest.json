@@ -1,0 +1,16 @@
+{
+    "/js/vendor.js": "/js/vendor.js",
+    "/js/general.js": "/js/general.js",
+    "/js/manifest.js": "/js/manifest.js",
+    "/resources/views/actores.blade.php": "/resources/views/actores.blade.php",
+    "/resources/views/crear-actor.blade.php": "/resources/views/crear-actor.blade.php",
+    "/resources/views/crear-director.blade.php": "/resources/views/crear-director.blade.php",
+    "/resources/views/create.blade.php": "/resources/views/create.blade.php",
+    "/resources/views/directores.blade.php": "/resources/views/directores.blade.php",
+    "/resources/views/edit.blade.php": "/resources/views/edit.blade.php",
+    "/resources/views/include/footer.blade.php": "/resources/views/include/footer.blade.php",
+    "/resources/views/include/head.blade.php": "/resources/views/include/head.blade.php",
+    "/resources/views/include/header.blade.php": "/resources/views/include/header.blade.php",
+    "/resources/views/index.blade.php": "/resources/views/index.blade.php",
+    "/resources/views/show.blade.php": "/resources/views/show.blade.php"
+}
